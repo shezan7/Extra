@@ -1,5 +1,5 @@
 const paymentSuccess = true;
-const marks = 77;
+const marks = 85;
 
 function enroll() {
     console.log('Course enrollment is in progress...');
@@ -57,3 +57,5 @@ async function course() {
         console.log(error);
     }
 }
+
+course();
