@@ -1,5 +1,5 @@
 const paymentSuccess = true;
-const marks = 75;
+const marks = 77;
 
 function enroll() {
     console.log('Course enrollment is in progress...');
@@ -47,12 +47,13 @@ function getCertificate() {
     return promise;
 }
 
-enroll()
-    .then(progress)
-    .then(getCertificate)
-    .then(function(value) {
-        console.log(value);
-    })
-    .catch(function(err) {
-        console.log(err);
-    })
+async function course() {
+    try {
+        await enroll();
+        await progress();
+        const message = await getCertificate();
+        console.log(message);
+    } catch (error) {
+        console.log(error);
+    }
+}
