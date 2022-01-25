@@ -335,15 +335,15 @@ let ques = {
     ]
   }
 
-   let newArray1 = ques.surveyQuestions.filter(function(x) {
+   let newArray = ques.surveyQuestions[0].questions.filter(x => x.referTo).map(y => y.id);
+   console.log(newArray); 
 
-    if(x.status==100) {
-        // if(ques.surveyQuestions.indexOf(referTo!=undefined)) {
-        //     return ques.surveyQuestions.id;
-        // }
-        return x.questions;
-        
-    }
+    // if(x.status==100) {
+    //     // if(ques.surveyQuestions.indexOf(referTo!=undefined)) {
+    //     //     return ques.surveyQuestions.id;
+    //     // }
+    //     return x.questions;
+    // }
     
     // for(let y=0; y<ques.surveyQuestions.questions.length; y++) {
     //     if(ques.surveyQuestions.questions.referTo!=undefined) {
@@ -361,7 +361,7 @@ let ques = {
     // }
 
                   
-  });
+  
   
 //   if(x.status==100) {
 //     let newArray2 = ques.surveyQuestions.filter(function(y) {
@@ -369,4 +369,4 @@ let ques = {
 //     });
 // }
 
-  console.log(newArray1);
+ // console.log(newArray1);
