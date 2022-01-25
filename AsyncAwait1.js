@@ -4,10 +4,10 @@ const marks = 85;
 function enroll() {
     console.log('Course enrollment is in progress...');
 
-    const promise = new Promise(function(resolve, reject) {
+    return new Promise(function(resolve, reject) {
         setTimeout(function() {
             if(paymentSuccess) {
-                resolve();
+                resolve('Successfull');
             }
             else {
                 reject('Payment Failed!!!');
@@ -15,7 +15,7 @@ function enroll() {
         }, 2000);
     });
 
-    return promise;
+   // return promise;
 }
 
 function progress() {
@@ -49,6 +49,8 @@ function getCertificate() {
 
 async function course() {
     try {
+        // let x = enroll();
+        // console.log(x);
         await enroll();
         await progress();
         const message = await getCertificate();
