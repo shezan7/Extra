@@ -334,3 +334,23 @@ let ques = {
       }
     ]
   }
+
+  let newArray1 = ques.surveyQuestions.filter(function(x) {
+
+    if(x.status==100) {
+        return x.status.id=1;
+
+    }
+      
+    //return x.status=100;
+      
+                  
+  });
+  
+//   if(x.status==100) {
+//     let newArray2 = ques.surveyQuestions.filter(function(y) {
+//         return x.status.referTo;
+//     });
+// }
+
+  console.log(newArray1);
