@@ -335,15 +335,31 @@ let ques = {
     ]
   }
 
-  let newArray1 = ques.surveyQuestions.filter(function(x) {
+   let newArray1 = ques.surveyQuestions.filter(function(x) {
 
     if(x.status==100) {
-        return x.status.id=1;
-
+        // if(ques.surveyQuestions.indexOf(referTo!=undefined)) {
+        //     return ques.surveyQuestions.id;
+        // }
+        return x.questions;
+        
     }
-      
+    
+    // for(let y=0; y<ques.surveyQuestions.questions.length; y++) {
+    //     if(ques.surveyQuestions.questions.referTo!=undefined) {
+    //         return ques.surveyQuestions.questionsid;
+    //     }
+    // }
+
     //return x.status=100;
-      
+            
+    //return x.status.id=1;
+    
+    // ques.surveyQuestions.map(getid);
+    // function getid(item) {
+    //     return [item.referTo];
+    // }
+
                   
   });
   
