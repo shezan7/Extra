@@ -335,38 +335,39 @@ let ques = {
     ]
   }
 
-   let newArray = ques.surveyQuestions[0].questions.filter(x => x.referTo).map(y => y.id);
-   console.log(newArray); 
+  //  let newArray = ques.surveyQuestions[0].questions.filter(x => x.referTo).map(y => y.id);
+  //  console.log(newArray);
+  //  let newArray2 = ques.surveyQuestions[1].questions.filter(x => x.referTo).map(y => y.id);
+  //  console.log(newArray2);
+ 
+  // let newArray3 = ques.surveyQuestions[0].questions.filter(x => x.options).map(y => y.options);
+  // console.log(newArray3);
+  // let newArray4 = ques.surveyQuestions[1].questions.filter(x => x.options).map(y => y.options);
+  // console.log(newArray4);
 
-    // if(x.status==100) {
-    //     // if(ques.surveyQuestions.indexOf(referTo!=undefined)) {
-    //     //     return ques.surveyQuestions.id;
-    //     // }
-    //     return x.questions;
-    // }
-    
-    // for(let y=0; y<ques.surveyQuestions.questions.length; y++) {
-    //     if(ques.surveyQuestions.questions.referTo!=undefined) {
-    //         return ques.surveyQuestions.questionsid;
-    //     }
-    // }
+   //let newArray5 = [newArray3, newArray4];
+  // let newArray5 = newArray3.concat(newArray4);
+   //console.log(newArray5);
 
-    //return x.status=100;
-            
-    //return x.status.id=1;
-    
-    // ques.surveyQuestions.map(getid);
-    // function getid(item) {
-    //     return [item.referTo];
-    // }
 
-                  
+   let array = [], demo = [0, 1];
+   demo.map((el) => ques.surveyQuestions[el].questions.filter((x) => x.options).map((y) => array = [...array, ...y.options]))
+   console.log(array);
+   //console.log(array.length);
+
+
+
+ // let variable = demo.map((el) => ques.surveyQuestions[el].questions.filter((x) => x.options).flatMap((y) => y.options ).flatMap((y) => y));
+//  console.log(variable);
+
+/*
+  var a = [1,2,3];
+  var sum = a.reduce(function(a, b) { return a + b; }, 0);
+
+  let array = [], demo = [0, 1];
+  demo.map((el) => ques.surveyQuestions[el].questions.filter((x) => x.options).map((y) => array.reduce(array, y.options), array[0]));
+  console.log(array);
+*/
+
+  // [2,6,7].map((el,idx) => console.log(el,idx));
   
-  
-//   if(x.status==100) {
-//     let newArray2 = ques.surveyQuestions.filter(function(y) {
-//         return x.status.referTo;
-//     });
-// }
-
- // console.log(newArray1);
