@@ -349,25 +349,113 @@ let ques = {
   // let newArray5 = newArray3.concat(newArray4);
    //console.log(newArray5);
 
-
+/*
    let array = [], demo = [0, 1];
    demo.map((el) => ques.surveyQuestions[el].questions.filter((x) => x.options).map((y) => array = [...array, ...y.options]))
    console.log(array);
    //console.log(array.length);
-
+*/
 
 
  // let variable = demo.map((el) => ques.surveyQuestions[el].questions.filter((x) => x.options).flatMap((y) => y.options ).flatMap((y) => y));
 //  console.log(variable);
 
-/*
-  var a = [1,2,3];
-  var sum = a.reduce(function(a, b) { return a + b; }, 0);
 
-  let array = [], demo = [0, 1];
-  demo.map((el) => ques.surveyQuestions[el].questions.filter((x) => x.options).map((y) => array.reduce(array, y.options), array[0]));
-  console.log(array);
+  // var a = [1,2,3];
+  // var sum = a.reduce(function(a, b) { return a + b; }, 0);
+
+/*
+  let result = [];
+  let demo = [0, 1];
+  demo.map((el) => ques.surveyQuestions[el].questions.filter((x) => x.options).map((y) => result = result.reduce((previous, current) => {
+    previous.push(current);
+    return previous;
+  }, y.options)));
+  console.log(result);
 */
 
-  // [2,6,7].map((el,idx) => console.log(el,idx));
+  // let demo = [0, 1];
+  // let result = demo.map((el) => ques.surveyQuestions[el].questions.filter((x) => x.options).map((y) => demo.reduce((previous, current) => {
+  //   previous.push(current);
+  //   return previous;
+  // }, [])));
+  // console.log(result);
+
+
+  let demo = [0, 1];
+  // console.time('z');
+  let result = demo.map((el) => qus.surveyQuestions[el].questions.filter((x) => x.options).reduce((a,b) => {
+    // console.log('a', a);
+    a.push(...b.options);
+    // console.log("b", b);
+    return a;
+  },[])).reduce((a, b) => {
+    a.push(...b);
+    return a;
+  });
+  // console.timeEnd("z");
+  console.log(result);
+
+  let demo = [0, 1];
+  // console.time('z');
+  let result = demo.map((el) => qus.surveyQuestions[el].questions.filter((x) => x.options).reduce((a,b) => {
+    // console.log('a', a);
+    a.push(...b.options);
+    // console.log("b", b);
+    return a;
+  },[])).flatMap((a) => {
+    return a;
+  });
+  // console.timeEnd("z");
+  console.log(result);
+
+
   
+  
+
+  // let array2 = [100, 200, 300, 400, 500]
+  // let result = array2.reduce((previous, current) => {
+  //   previous.push(current*2);
+  //   return previous;
+  // }, []);
+  // console.log(result);
+  
+
+  // let array2 = [100, 200, 300, 400, 500]
+  // let result = array2.reduce(function(previous, current) {
+  //   previous.push(current*2);
+  //   return previous;
+  // }, []);
+  // console.log(result);
+  
+
+//   console.log([1, 2, 3, 4, 5].reduce(function (a, b) {
+//     a.push(b*2);
+//     //console.log(a, b);
+//     return a;
+// }, []));
+
+//console.log(array);
+ 
+// array.push();
+  
+//   console.log(array);
+
+
+//   // [2,6,7].map((el,idx) => console.log(el,idx));
+
+
+// for(let i=1; i<=100; i++) {
+//   if(i%15==0) {
+//     console.log('fizzbuzz');
+//   }
+//   else if(i%3==0) {
+//     console.log('fizz');
+//   }
+//   else if(i%5==0) {
+//     console.log('buzz');
+//   }
+//   else {
+//     console.log(i);
+//   }
+// }
